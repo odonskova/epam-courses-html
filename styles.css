@@ -1,0 +1,140 @@
+/*limited reset*/
+html, body, div, section, article, aside, header, footer, h1, h2, h3, h4, h5, h6, p, blockquote, time, span, em, strong, img, figure {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*html5 display rule*/
+article, aside, figcaption, figure, footer, section {
+    display: block;
+}
+html {
+    background: #ddd;
+}
+body {
+    font-family: Georgia;
+    font-size: 18px;
+    line-height: 1.6;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    text-align:left;
+    position: relative;
+    background: white;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header h1 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 86px;
+    padding: 15px 15px;
+    margin-top: 5px;
+}
+
+header aside {
+    border: 1px solid gray;
+    padding: 15px 15px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+section#pubInfo{
+    border: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
+ }
+
+section#pubInfo p#copyRight {
+    font-size: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+p#pubDate, p#price{
+    text-transform: uppercase;
+}
+
+/* MAIN CSS*/
+main section{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    margin: 5px;
+    text-indent: 1.5em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+}
+
+article#left{
+    width: 500px;
+    padding: 20px 5px;
+
+}
+
+article#left p#leftText{
+    -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2;
+    column-rule: 1px solid #000;
+}
+article#middle {
+    border: 2px solid gray;
+    padding: 10px 20px;
+    width: 700px;
+}
+article#middle p#middleText{
+    -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2;
+    column-rule: 1px solid #000;
+}
+article#right{
+    width: 200px;
+    padding: 20px 10px;
+}
+article#right p#continue{
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+article#middle img {
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    border: 20px solid #f0f0d5;
+}
+article p.author, h2 {
+    text-align: center;
+}
+hr {
+    width: 80%;
+}
+/* FOOTER CSS*/
+footer{
+    border: 2px solid black;
+
+}
+section#articleInfo{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 5px;
+    padding: 2px;
+}
+
+section#articleInfo article h5{
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: left;
+
+}
+section#articleInfo article p.page{
+    text-align: right;
+}
+
+div.line{
+    border-right: 2px solid black;
+    margin-right: 20px;
+    padding-right: 10px;
+}
