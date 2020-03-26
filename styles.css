@@ -1,140 +1,334 @@
-/*limited reset*/
+/*  ------ limited reset --------*/
 html, body, div, section, article, aside, header, footer, h1, h2, h3, h4, h5, h6, p, blockquote, time, span, em, strong, img, figure {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-/*html5 display rule*/
-article, aside, figcaption, figure, footer, section {
-    display: block;
-}
+/* ------ html5 display rule ------- */
+/*article, aside, figcaption, figure, footer, section {*/
+/*    display: block;*/
+/*}*/
+
 html {
     background: #ddd;
+    box-sizing: border-box;
 }
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
 body {
-    font-family: Georgia;
-    font-size: 18px;
+    font-family: Georgia, sans-serif;
+    font-size: 20px;
     line-height: 1.6;
-    width: 1400px;
+    width: 1600px;
     margin: 0 auto;
     padding: 10px 50px;
     text-align:left;
-    position: relative;
     background: white;
 }
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+/* --------  HEADER CSS ----------   */
 header h1 {
     font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 86px;
-    padding: 15px 15px;
-    margin-top: 5px;
+    font-size: 120px;
+    text-align: center;
 }
 
-header aside {
-    border: 1px solid gray;
-    padding: 15px 15px;
+aside {
+    font-size: 20px;
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.5;
+    border: 2px solid black;
+    float: left;
+    padding: 20px;
+    margin: 30px auto;
 }
 
 section#pubInfo{
     border: 2px solid gray;
     display: flex;
     justify-content: space-between;
- }
+}
 
 section#pubInfo p#copyRight {
     font-size: 10px;
     display: flex;
     align-items: flex-end;
 }
+
 p#pubDate, p#price{
     text-transform: uppercase;
 }
 
-/* MAIN CSS*/
+/* ---------- MAIN CSS ----------  */
 main section{
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    padding: 10px 25px;
-    margin: 5px;
-    text-indent: 1.5em; /* Отступ первой строки */
-    text-align: justify; /* Выравнивание по ширине */
+    padding: 10px 0;
+    text-indent: 1.5em;
+    text-align: justify;
 }
 
-article#left{
+article#leftArticle{
     width: 500px;
-    padding: 20px 5px;
-
+    padding: 20px 10px;
 }
 
-article#left p#leftText{
+article#leftArticle h2{
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+}
+
+article#leftArticle > p.leftText {
     -webkit-column-count:2;
     -moz-column-count:2;
     column-count:2;
     column-rule: 1px solid #000;
 }
-article#middle {
+
+article#leftArticle img {
+    float: left;
+    width: 480px;
+    padding: 10px;
+}
+
+p.leftText{
+    margin-top: 10px;
+}
+article#middleArticle {
     border: 2px solid gray;
     padding: 10px 20px;
     width: 700px;
 }
-article#middle p#middleText{
+
+article#middleArticle h2{
+    font-size: 40px;
+}
+article#middleArticle > p.middleText{
     -webkit-column-count:2;
     -moz-column-count:2;
     column-count:2;
     column-rule: 1px solid #000;
 }
-article#right{
-    width: 200px;
-    padding: 20px 10px;
+
+article#middleArticle img.middleImage{
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 20px solid #e1d8b9;
 }
-article#right p#continue{
-    font-size: 12px;
+
+.secondMiddleImage {
+    float:left;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+figcaption{
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+p.middleText{
+    margin-top: 10px;
+}
+article#rightArticle{
+    width: 300px;
+    padding: 5px;
+}
+
+article#rightArticle h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 34px;
+}
+
+p.continue{
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
+    padding-top: 15px;
 }
-article#middle img {
-    height: 500px;
-    width: 500px;
-    border-radius: 10px;
-    border: 20px solid #f0f0d5;
+article#rightArticle img {
+    display: block;
+    top: 5px;
+    bottom: 5px;
+    right: 30px;
+    padding: 10px;
 }
-article p.author, h2 {
+
+article#rightArticle blockquote {
+    background: #e1d8b9;
+    color: #4d4d4d;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 20px 0 0 20px;
+    width: 300px;
+}
+blockquote p {
+    padding: 20px;
+}
+
+article#rightArticle blockquote footer{
+    background: #4d4d4d;
+    color: #fff;
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 10px;
+    border: none;
+}
+
+p.middleText{
+    margin-top: 10px;
+}
+q::before {
+    content: open-quote;
+}
+
+q::after{
+    content: close-quote;
+}
+
+p.author {
+    font-family: 'Satisfy', cursive;
     text-align: center;
 }
+
+h2 {
+    text-align: center;
+}
+
 hr {
     width: 80%;
 }
-/* FOOTER CSS*/
-footer{
-    border: 2px solid black;
 
+/* ------- FOOTER CSS -------- */
+footer {
+    border: 2px solid black;
 }
-section#articleInfo{
+
+section#articleInfo {
     display: flex;
     justify-content: space-between;
     margin: 5px 5px;
-    padding: 2px;
+    padding: 10px;
 }
 
-section#articleInfo article h5{
+section#articleInfo p.footerText{
+    background: lightgrey;
+}
+
+h5 {
     text-transform: uppercase;
     font-weight: normal;
     text-align: left;
-
 }
-section#articleInfo article p.page{
+
+p.page {
     text-align: right;
 }
 
+/*  ------- Adding vertical line ------- */
 div.line{
     border-right: 2px solid black;
     margin-right: 20px;
     padding-right: 10px;
+}
+
+
+/*  ---------- IMAGE HOVER ------------- */
+/*  ********** Left Article ********** */
+.leftContainer {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    background-color: #2F3061;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.leftContainer:hover .overlay {
+    width: 100%;
+    left: 0;
+}
+
+.leftImageText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    padding: 20px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*  ********** Middle Article ********** */
+.middleContainer {
+    position: relative;
+}
+
+.middleImage {
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.middleContainer:hover .middleImage {
+    opacity: 0.3;
+}
+
+.middleContainer:hover .middle {
+    opacity: 1;
+}
+
+.middleImageText {
+    color: black;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 10px;
+}
+
+/*  ********** Right Article ********** */
+.rightContainer {
+    position: relative;
+}
+
+.rightOverlay {
+    position: absolute;
+    top: 35%;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.rightContainer:hover .rightOverlay {
+    opacity: 1;
 }
