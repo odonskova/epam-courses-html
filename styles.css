@@ -29,7 +29,7 @@ body {
     text-align:left;
     background: white;
 }
-/* --------  HEADER CSS ----------   */
+/* ----------  HEADER CSS ----------   */
 header h1 {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 120px;
@@ -71,6 +71,32 @@ main section{
     text-align: justify;
 }
 
+figcaption{
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+p.continue{
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+p.author {
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    width: 80%;
+}
+
+/* ******** LEFT ARTICLE ********* */
 article#leftArticle{
     width: 500px;
     padding: 20px 10px;
@@ -97,6 +123,8 @@ article#leftArticle img {
 p.leftText{
     margin-top: 10px;
 }
+
+/* ******** MIDDLE ARTICLE ********* */
 article#middleArticle {
     border: 2px solid gray;
     padding: 10px 20px;
@@ -122,18 +150,14 @@ article#middleArticle img.middleImage{
 
 .secondMiddleImage {
     float:left;
-    margin-top: 15px;
-    margin-right: 15px;
-}
-
-figcaption{
-    text-align: right;
-    margin-bottom: 15px;
+    border-radius: 20px;
 }
 
 p.middleText{
     margin-top: 10px;
 }
+
+/* ******** RIGHT ARTICLE ********* */
 article#rightArticle{
     width: 300px;
     padding: 5px;
@@ -144,12 +168,7 @@ article#rightArticle h2 {
     font-size: 34px;
 }
 
-p.continue{
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 15px;
-}
+
 article#rightArticle img {
     display: block;
     top: 5px;
@@ -181,9 +200,6 @@ article#rightArticle blockquote footer{
     border: none;
 }
 
-p.middleText{
-    margin-top: 10px;
-}
 q::before {
     content: open-quote;
 }
@@ -192,17 +208,54 @@ q::after{
     content: close-quote;
 }
 
-p.author {
-    font-family: 'Satisfy', cursive;
-    text-align: center;
+/* ------- HOVER EFFECTS  -------- */
+aside:hover{
+    font-size: 25px;
+    border: none;
+    background: beige;
+    -webkit-transition: top 1s ease-out 0.5s;
+    -moz-transition: top 1s ease-out 0.5s;
+    -o-transition: top 1s ease-out 0.5s;
+    transition: top 1s linear;
 }
 
-h2 {
-    text-align: center;
+header h1:hover{
+    font-size: 140px;
 }
 
-hr {
-    width: 80%;
+section#pubInfo:hover {
+    font-size: 25px;
+    font-weight: bold;
+    border: 4px solid black;
+}
+
+article h2:hover{
+    text-decoration: underline;
+    font-weight: normal;
+    font-style: italic;
+}
+
+p.author:hover {
+    font-family: Georgia, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-transform: scaleY(2);
+    transform: scaleY(2);
+}
+
+blockquote:hover {
+    -webkit-transform: scaleY(2);
+    transform: scale(2);
+}
+
+footer:hover {
+    -webkit-transform: scaleY(2);
+    transform: scale(2);
+    background: #e1d8b9;
+}
+
+section#articleInfo p.footerText:hover{
+    background: #e1d8b9;
 }
 
 /* ------- FOOTER CSS -------- */
@@ -240,6 +293,7 @@ div.line{
 
 
 /*  ---------- IMAGE HOVER ------------- */
+
 /*  ********** Left Article ********** */
 .leftContainer {
     position: relative;
@@ -276,6 +330,7 @@ div.line{
 }
 
 /*  ********** Middle Article ********** */
+/*             FIRST image               */
 .middleContainer {
     position: relative;
 }
@@ -309,6 +364,91 @@ div.line{
     font-size: 32px;
     padding: 10px;
 }
+
+/*             SECOND image             */
+.view {
+    float: left;
+    border: 5px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    right: 15px;
+}
+
+.view .secondMiddleImageText{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+
+.view h4 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0 0 0;
+}
+
+.view p {
+    font-style: italic;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center
+}
+
+.secondMiddleContainer img {
+    /* увеличиваем масштаб картинки по вертикали*/
+    transform: scaleY(1);
+    transition: all .7s ease-in-out;
+}
+
+.secondMiddleContainer .secondMiddleImageText {
+    background-color: rgba(255, 231, 179, 0.3);
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+
+.secondMiddleContainer h4 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 20px 40px 0 40px;
+    transform: scale(0);
+    color: #333;
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+
+.secondMiddleContainer p {
+    color: #343434;
+    opacity: 0;
+}
+
+.secondMiddleContainer:hover img {
+    /* пропорциональное увеличение картинки в 10 раз */
+    -webkit-transform: scale(10);
+    transform: scale(10);
+    opacity: 0;
+}
+
+.secondMiddleContainer:hover .secondMiddleImageText {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.secondMiddleContainer:hover h4,
+.secondMiddleContainer:hover p{
+    /* пропорциональное увеличение h4/p в 1 раз */
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 /*  ********** Right Article ********** */
 .rightContainer {
